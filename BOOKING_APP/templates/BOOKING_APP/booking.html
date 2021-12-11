@@ -1,0 +1,58 @@
+{% extends "BOOKING_APP/base.html" %}
+
+{% block content %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="http://res.cloudinary.com/dlqh66keo/image/upload/v1639081058/logo_transparent_background_hqyicu.png" alt="Geco Tech Logo" class="navbar-brand">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{% url 'booking_app' %}">Home</a>
+                <a class="nav-item nav-link active" href="{% url 'booking_view' %}">Book Now</a>
+                <a class="nav-item nav-link" href="{% url 'login' %}">My Bookings</a>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Table Reservation Form -->
+    <section id="book-a-table" class="book-a-table">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+    			<div class="col-md-8 offset-md-2 text-center">
+    				<h2 class="text-success">Book A Repair Slot</h2>
+    				<p class="mb-5">Fill out the booking form below, please remember to cancel your appointment if you cannot make it.</p>
+    			</div>
+    		</div>
+
+            <form action="" method="post" role="form">
+              <div class="form-row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="number" class="form-control" name="phone" id="phone" placeholder="Your Phone Number">
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="date" name="date" class="form-control" id="date" placeholder="Date">
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="time" class="form-control" name="time" id="time" placeholder="Time">
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="text" class="form-control" name="device" id="device" placeholder="Device Make & Model">
+                </div>
+              </div>
+              <div class="form-group">
+                    <textarea class="form-control" name="message" placeholder="Message"></textarea>
+              </div>
+              <button type="submit" class="btn btn-success float-right mt-3">Book a Table</button>
+            </form>
+        </div>
+    </section>
+    <!-- End Table Reservation Form -->
+
+{%endblock%}

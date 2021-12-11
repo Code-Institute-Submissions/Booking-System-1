@@ -1,0 +1,65 @@
+/* ---------------------------------- Nav Bar */
+#top-nav {
+    color: #ffff;
+    background-color: #96C345;
+    text-align: center;
+}
+
+.top {
+    text-align: center;
+    display: inline-block;
+    width: 30%;
+    margin: auto;
+    padding: 10px 0px;
+    font-size: 1em;
+}
+
+.navbar-brand {
+    max-width: 100px;
+}
+
+.active {
+    border-bottom: 1px solid black;
+}
+
+/* ------------------------------------------ index */
+.jumbotron {
+    width: 75%;
+    margin: 100px auto;
+}
+
+.display-4 {
+    color: #96C345;
+}
+/* ------------------------------------------ Main */
+article {
+    text-align: center;
+    height: 88.5vh;
+}
+
+#log-in-article {
+    height: 100vh;
+}
+
+/* ---------------------------------------- Footer */
+#footer {
+    height: 100px;
+    color: #ffff;
+    background-color: #96C345;
+}
+
+/* ---------------------------------- Booking Page */
+#book-a-table {
+    background-color: #FAFAFA;
+    padding: 50px 0px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    float: left;
+    width: 100%;
+    margin: 70px auto;
+}
+.book-a-table p {
+	color: #9a9a9a;
+}
+
+/* ---------------------------------- My Bookings Page */

@@ -1,0 +1,20 @@
+{% extends "BOOKING_APP/base.html" %}
+{% block content %}
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="http://res.cloudinary.com/dlqh66keo/image/upload/v1639081058/logo_transparent_background_hqyicu.png" alt="Geco Tech Logo" class="navbar-brand">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
+         <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{% url 'booking_app' %}">Home</a>
+            <a class="nav-item nav-link" href="{% url 'booking_view' %}">Book Now</a>
+            <a class="nav-item nav-link active" href="{% url 'login' %}">My Bookings</a>
+         </div>
+      </div>
+   </nav>
+</header>
+<article id="log-in-article">
+    <h1>test</h1>
+</article>
+{%endblock%}
