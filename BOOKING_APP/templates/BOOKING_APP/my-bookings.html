@@ -18,9 +18,9 @@
    <h2 id="my-book-h2">
       My Bookings
    </h2>
-    <div id="my-bookings">
-    <table id="tab-book">
-      {% for booking in bookings %}
+   <div id="my-bookings"></div>
+   {% for booking in bookings %}
+    <table class="tab-book">
          <tr>
             <td>
                Name: {{ booking.name }}
@@ -62,8 +62,13 @@
                <i class="fas fa-trash edit-delete"></i>
             </td>
          </tr>
-      {% endfor %}
       </table>
+      {% endfor %}
    </div>
 </article>
+<aside>
+   <div id="add-another">
+      <a role="button" class="btn btn-success add-btn" href="{% url 'booking_view' %}">Add Another Booking</a>
+   </div>
+</aside>
 {%endblock%}

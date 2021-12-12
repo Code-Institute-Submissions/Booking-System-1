@@ -16,7 +16,7 @@
         </nav>
     </header>
     <!-- Table Reservation Form -->
-    <section id="book-a-table" class="book-a-table">
+    <article id="book-a-table" class="book-a-table">
         <div class="container" data-aos="fade-up">
             <div class="row">
     			<div class="col-md-8 offset-md-2 text-center">
@@ -24,7 +24,8 @@
     				<p class="mb-5">Fill out the booking form below, please remember to cancel your appointment if you cannot make it.</p>
     			</div>
     		</div>
-            <form action="" method="post" role="form">
+            <form action="" method="POST" action="my_bookings" role="form">
+                {% csrf_token %}
               <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
@@ -48,10 +49,13 @@
               <div class="form-group">
                     <textarea class="form-control" name="message" placeholder="Message"></textarea>
               </div>
+              <div id="form-btns">
+              <a role="button" href="{% url 'my_bookings' %}" class="btn btn-secondary float-left mt-3">See My Bookings</a>
               <button type="submit" class="btn btn-success float-right mt-3">Book a Table</button>
+            </div>
             </form>
         </div>
-    </section>
+    </article>
     <!-- End Table Reservation Form -->
 
 {%endblock%}
