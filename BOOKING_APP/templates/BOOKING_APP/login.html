@@ -15,6 +15,49 @@
    </nav>
 </header>
 <article id="log-in-article">
-    <h1>test</h1>
+   <h2>
+      My Bookings
+   </h2>
+    <div id="my-bookings">
+    <table>
+      {% for booking in bookings %}
+         <tr>
+            <td>
+               Name: {{ booking.name }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Email: {{ booking.email }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Phone Number: {{ booking.phone }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Device / Model: {{ booking.device }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Booking Date: {{ booking.date }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Booking Time: {{ booking.time }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               Message: {{ booking.message }}
+            </td>
+         </tr>
+      {% endfor %}
+      </table>
+   </div>
 </article>
 {%endblock%}

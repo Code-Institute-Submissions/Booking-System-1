@@ -1,5 +1,8 @@
 """ Import render """
 from django.shortcuts import render
+from .models import Booking
+
+# Create your views here.
 
 
 def booking_app(request):
@@ -11,6 +14,11 @@ def booking_view(request):
     """ Booking Page """
     return render(request, 'BOOKING_APP/booking.html')
 
+
 def log_in(request):
     """ log in Page """
-    return render(request, 'BOOKING_APP/login.html')
+    bookings = Booking.objects.all()
+    context = {
+        'bookings': bookings
+    }
+    return render(request, 'BOOKING_APP/login.html', context)
