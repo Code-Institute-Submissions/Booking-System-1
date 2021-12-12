@@ -18,8 +18,9 @@ def booking_view(request):
         phone = request.POST.get('phone')
         date = request.POST.get('date')
         time = request.POST.get('time')
+        device = request.POST.get('device')
         message = request.POST.get('message')
-        Booking.objects.create(name=name, email=email, phone=phone, date=date, time=time, message=message)
+        Booking.objects.create(name=name, email=email, phone=phone, date=date, time=time, device=device, message=message)
 
         return redirect('my_bookings')
     return render(request, 'BOOKING_APP/booking.html')
