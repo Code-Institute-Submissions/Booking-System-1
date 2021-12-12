@@ -15,10 +15,10 @@ def booking_view(request):
     return render(request, 'BOOKING_APP/booking.html')
 
 
-def log_in(request):
+def my_bookings(request):
     """ log in Page """
     bookings = Booking.objects.all()
     context = {
         'bookings': bookings
     }
-    return render(request, 'BOOKING_APP/login.html', context)
+    return render(request, 'BOOKING_APP/my-bookings.html', context)

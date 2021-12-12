@@ -63,3 +63,28 @@ article {
 }
 
 /* ---------------------------------- My Bookings Page */
+#my-bookings {
+    margin: auto;
+    width: 75%;
+    margin-top: 50px;
+}
+
+#my-book-h2 {
+    margin-top: 20px;
+}
+
+#tab-book {
+    margin: auto;
+    border: 3px #96C345 solid;
+}
+
+#tab-book td {
+    padding: 10px;
+    text-align: left;
+    border: 1px #96C345 solid;
+}
+
+.edit-delete {
+    margin: 0px 10px;
+    padding: 10px;
+}
