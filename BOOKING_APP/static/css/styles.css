@@ -88,11 +88,14 @@ form {
 }
 
 .tab-book {
-    border: 3px #96C345 solid;
+    border: 3px #000000 solid;
     display: inline-flex;
     padding: 10px;
-    margin: 30px;
+    margin: 20px;
     min-width: 330px;
+    background-color: #96C345;
+    color: white;
+    font-weight: bold;
 }
 
 .tab-book td {
@@ -107,13 +110,28 @@ form {
     padding: 10px;
 }
 
+.edit {
+    color:aqua;
+}
+
+.edit:hover {
+    color:blue;
+}
+
+.delete {
+    color: crimson;
+}
+
+.delete:hover {
+    color:darkred;
+}
+
 #add-another {
     text-align: center;
-    margin-top: 20px;
 }
 
 .add-btn {
     text-align: center;
     min-width: 15%;
-    margin: 30px auto 100px;
+    margin: 5px auto 100px;
 }
