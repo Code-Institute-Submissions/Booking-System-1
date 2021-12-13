@@ -4,4 +4,7 @@ from .models import Booking
 # Register your models here.
 
 
-admin.site.register(Booking)
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    list_display = ('name', 'date', 'time','email', 'device')
+    search_fields = ('name', 'date', 'time','email', 'device')
