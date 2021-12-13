@@ -68,6 +68,10 @@ article {
     padding: 50px 0px;
 }
 
+form {
+    text-align: left;
+}
+
 /* ---------------------------------- My Bookings Page */
 #log-in-article {
     height: auto;
