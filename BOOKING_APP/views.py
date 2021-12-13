@@ -1,6 +1,7 @@
 """ Import render """
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Booking
+from .forms import BookingForm
 
 # Create your views here.
 
@@ -13,17 +14,15 @@ def booking_app(request):
 def booking_view(request):
     """ Booking Page """
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        date = request.POST.get('date')
-        time = request.POST.get('time')
-        device = request.POST.get('device')
-        message = request.POST.get('message')
-        Booking.objects.create(name=name, email=email, phone=phone, date=date, time=time, device=device, message=message)
-
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
         return redirect('my_bookings')
-    return render(request, 'BOOKING_APP/booking.html')
+    form = BookingForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'BOOKING_APP/booking.html', context)
 
 
 def my_bookings(request):
@@ -33,3 +32,17 @@ def my_bookings(request):
         'bookings': bookings
     }
     return render(request, 'BOOKING_APP/my-bookings.html', context)
+
+
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+        return redirect('my_bookings')
+    form = BookingForm(instance=booking)
+    context = {
+        'form': form
+    }
+    return render(request, 'BOOKING_APP/edit_booking.html', context)
