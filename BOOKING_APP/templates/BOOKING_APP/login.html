@@ -1,10 +1,10 @@
 {% extends "BOOKING_APP/base.html" %}
 
-{% block content %}      
+{% block content %}
 
 {% load crispy_forms_tags %}
-
-<!--Login--> 
+{% include "BOOKING_APP/tabs.html" with active_tab='login' %}
+<!--Login-->
 <div class="container py-5">
   <h1>Login</h1>
   <form method="POST">

@@ -1,73 +1,60 @@
 {% extends "BOOKING_APP/base.html" %}
 {% block content %}
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <img src="http://res.cloudinary.com/dlqh66keo/image/upload/v1639081058/logo_transparent_background_hqyicu.png" alt="Geco Tech Logo" class="navbar-brand">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
-         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="{% url 'booking_app' %}">Home</a>
-            <a class="nav-item nav-link" href="{% url 'booking_view' %}">Book Now</a>
-            <a class="nav-item nav-link active" href="{% url 'my_bookings' %}">My Bookings</a>
-         </div>
-      </div>
-   </nav>
-</header>
+{% include "BOOKING_APP/tabs.html" with active_tab='tab3' %}
 <article id="log-in-article">
    <h2 id="my-book-h2">
       My Bookings
    </h2>
    <div id="my-bookings"></div>
    {% for booking in bookings %}
-    <table class="tab-book">
-         <tr>
-            <td>
-               Name: {{ booking.name }}
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Email: {{ booking.email }}
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Phone Number: {{ booking.phone }}
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Device / Model: {{ booking.device }}
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Booking Date: {{ booking.date }}
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Booking Time: {{ booking.time }}
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Message: {{ booking.message }}
-            </td>
-         </tr>
-         <tr>
-            <td>
-               <a href="/edit/{{ booking.id }}">
-                  <i class="fas fa-pen edit-delete edit"></i>
-               </a>
-               <a href="/delete/{{ booking.id }}">
-                  <i class="fas fa-trash edit-delete delete"></i>
-               </a>
-            </td>
-         </tr>
-      </table>
-      {% endfor %}
+   <table class="tab-book">
+      <tr>
+         <td>
+            Name: {{ booking.name }}
+         </td>
+      </tr>
+      <tr>
+         <td>
+            Email: {{ booking.email }}
+         </td>
+      </tr>
+      <tr>
+         <td>
+            Phone Number: {{ booking.phone }}
+         </td>
+      </tr>
+      <tr>
+         <td>
+            Device / Model: {{ booking.device }}
+         </td>
+      </tr>
+      <tr>
+         <td>
+            Booking Date: {{ booking.date }}
+         </td>
+      </tr>
+      <tr>
+         <td>
+            Booking Time: {{ booking.time }}
+         </td>
+      </tr>
+      <tr>
+         <td>
+            Message: {{ booking.message }}
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <a href="/edit/{{ booking.id }}">
+               <i class="fas fa-pen edit-delete edit"></i>
+            </a>
+            <a href="/delete/{{ booking.id }}">
+               <i class="fas fa-trash edit-delete delete"></i>
+            </a>
+         </td>
+      </tr>
+   </table>
+   {% endfor %}
    </div>
 </article>
 <aside>
