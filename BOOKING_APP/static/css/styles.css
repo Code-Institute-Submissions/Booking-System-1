@@ -14,6 +14,24 @@
     font-size: 1em;
 }
 
+.login {
+    padding: 10px;
+    color: #FAFAFA;
+    font-weight: bold;
+}
+
+.login:hover {
+    color: #000000;
+}
+
+.navbar-nav a {
+    color: #95C345;
+}
+
+.navbar-nav a:hover {
+    color: #000000;
+}
+
 .navbar-brand {
     max-width: 100px;
 }
