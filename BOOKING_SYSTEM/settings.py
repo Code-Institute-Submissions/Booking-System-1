@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'BOOKING_APP',
     'phone_field',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Crispy Forms
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
