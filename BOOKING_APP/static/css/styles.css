@@ -40,6 +40,11 @@
     border-bottom: 1px solid black;
 }
 
+.p-0 {
+    width: 50%;
+    margin: auto;
+}
+
 /* ------------------------------------------ index */
 .jumbotron {
     width: 75%;
@@ -87,8 +92,18 @@ article {
 }
 
 form {
-    text-align: left;
+    width: 75%;
+    margin: auto;
+    
 }
+
+label {
+    display: block;
+    width: 2em;
+    padding-left: 0px;
+    margin-top: 0.5em;
+    }
+
 
 /* ---------------------------------- My Bookings Page */
 #log-in-article {

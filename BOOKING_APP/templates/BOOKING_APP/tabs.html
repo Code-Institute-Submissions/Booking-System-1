@@ -1,40 +1,52 @@
 <header>
     <div id="top-nav">
-        <p class="top">
-            <span><i class="fab fa-facebook"></i></span>
-            <span><i class="fab fa-twitter-square"></i></span>
-            <span><i class="fas fa-envelope"></i></span>
-        </p>
-        <p class="top">
-            HAVE A QUESTION? GET IN TOUCH!
-        </p>
-        <p class="top">
-            {% if user.is_authenticated %}
-            <a class="login" href="#">Welcome, {{user.username}}</a>
-            <a class="login" href="/logout">Logout</a>
-            {% else %}
-            <a class="{% if active_tab == 'login' %} active{% endif %} login" href="{% url 'login' %}">Log in</a>
-            <a class="{% if active_tab == 'register' %} active{% endif %} login" href="{% url 'register' %}">Register</a>
-            {% endif %}
-        </p>
+       <p class="top">
+          <span><i class="fab fa-facebook"></i></span>
+          <span><i class="fab fa-twitter-square"></i></span>
+          <span><i class="fas fa-envelope"></i></span>
+       </p>
+       <p class="top">
+          HAVE A QUESTION? GET IN TOUCH!
+       </p>
+       <p class="top">
+          {% if user.is_authenticated %}
+          <a class="login" href="#">Welcome, {{user.username}}</a>
+          <a class="login" href="/logout">Logout</a>
+          {% else %}
+          <a class="{% if active_tab == 'login' %} active{% endif %} login" href="{% url 'login' %}">Log in</a>
+          <a class="{% if active_tab == 'register' %} active{% endif %} login" href="{% url 'register' %}">Register</a>
+          {% endif %}
+       </p>
     </div>
     <!-- Nav Menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="http://res.cloudinary.com/dlqh66keo/image/upload/v1639081058/logo_transparent_background_hqyicu.png"
-            alt="Geco Tech Logo" class="navbar-brand">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
-            <ul class="navbar-nav">
-                <li class="{% if active_tab == 'tab1' %} active{% endif %} nav-item nav-link"><a
-                        href="{% url 'booking_app' %}">Home</a></li>
-                <li class="{% if active_tab == 'tab2' %} active{% endif %} nav-item nav-link"><a
-                        href="{% url 'booking_view' %}">Book Now</a></li>
-                <li class="{% if active_tab == 'tab3' %} active{% endif %} nav-item nav-link"><a
-                        href="{% url 'my_bookings' %}">My Bookings</a></li>
-            </ul>
-        </div>
+       <img src="http://res.cloudinary.com/dlqh66keo/image/upload/v1639081058/logo_transparent_background_hqyicu.png"
+          alt="Geco Tech Logo" class="navbar-brand">
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
+          <ul class="navbar-nav">
+             <li class="{% if active_tab == 'tab1' %} active{% endif %} nav-item nav-link"><a
+                href="{% url 'booking_app' %}">Home</a></li>
+             <li class="{% if active_tab == 'tab2' %} active{% endif %} nav-item nav-link"><a
+                href="{% url 'booking_view' %}">Book Now</a></li>
+             <li class="{% if active_tab == 'tab3' %} active{% endif %} nav-item nav-link"><a
+                href="{% url 'my_bookings' %}">My Bookings</a></li>
+          </ul>
+       </div>
     </nav>
-</header>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="container-fluid p-0">
+       <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="True">&times;</span>
+          </button>
+          {{ message }}
+       </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+ </header>
