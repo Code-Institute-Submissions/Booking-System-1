@@ -157,3 +157,12 @@ MESSAGE_TAGS = {
         messages.WARNING: 'alert-warning',
         messages.ERROR: 'alert-danger',
  }
+
+
+# For password reset
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# EMAIL_BACKEND = 'django_ses.SESBackend'
+# AWS_SES_REGION_NAME = 'eu-west-2'
+# AWS_SES_REGION_ENDPOINT = 'rds.eu-west-2.amazonaws.com'

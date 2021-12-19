@@ -16,8 +16,7 @@
             {% csrf_token %}
             {{ form }}
             <div id="form-btns">
-                <a role="button" href="{% url 'my_bookings' %}" class="btn btn-secondary float-left mt-3">See My
-                    Bookings</a>
+                <a role="button" href="{% url 'my_bookings' %}" class="btn btn-danger float-left mt-3">Cancel</a>
                 <button type="submit" class="btn btn-success float-right mt-3">Update Booking</button>
             </div>
         </form>
