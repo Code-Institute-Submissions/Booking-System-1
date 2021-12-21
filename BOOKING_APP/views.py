@@ -26,16 +26,20 @@ def booking_app(request):
 
 def booking_view(request):
     """ Booking Page """
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('my_bookings')
-    form = BookingForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'BOOKING_APP/booking.html', context)
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = BookingForm(request.POST)
+            if form.is_valid():
+                form.save()
+            messages.success(request, "Booking successful.")
+            return redirect('my_bookings')
+        form = BookingForm()
+        context = {
+            'form': form
+        }
+        return render(request, 'BOOKING_APP/booking.html', context)
+    else:
+        return redirect('/login/')
 
 
 def my_bookings(request):
@@ -56,6 +60,7 @@ def edit_booking(request, booking_id):
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
+        messages.success(request, "Edit successful.")
         return redirect('my_bookings')
     form = BookingForm(instance=booking)
     context = {
@@ -67,6 +72,7 @@ def edit_booking(request, booking_id):
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()
+    messages.success(request, "Deletion successful.")
     return redirect('my_bookings')
 
 
