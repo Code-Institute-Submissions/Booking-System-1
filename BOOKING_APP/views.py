@@ -40,11 +40,14 @@ def booking_view(request):
 
 def my_bookings(request):
     """ My Bookings Page """
-    bookings = Booking.objects.all()
-    context = {
-        'bookings': bookings
-    }
-    return render(request, 'BOOKING_APP/my-bookings.html', context)
+    if request.user.is_authenticated:
+        bookings = Booking.objects.all()
+        context = {
+            'bookings': bookings
+        }
+        return render(request, 'BOOKING_APP/my-bookings.html', context)
+    else:
+        return redirect('/login/')
 
 
 def edit_booking(request, booking_id):
