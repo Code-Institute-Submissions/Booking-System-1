@@ -21,7 +21,7 @@ from .models import Booking
 
 def booking_app(request):
     """ Home Page """
-    return render(request, 'BOOKING_APP/index.html')
+    return render(request, 'booking_app/index.html')
 
 
 def booking_view(request):
@@ -38,7 +38,7 @@ def booking_view(request):
         context = {
             'form': form
         }
-        return render(request, 'BOOKING_APP/booking.html', context)
+        return render(request, 'booking_app/booking.html', context)
     else:
         return redirect('/login/')
 
@@ -50,7 +50,7 @@ def my_bookings(request):
         context = {
             'bookings': bookings
         }
-        return render(request, 'BOOKING_APP/my-bookings.html', context)
+        return render(request, 'booking_app/my-bookings.html', context)
     else:
         return redirect('/login/')
 
@@ -67,7 +67,7 @@ def edit_booking(request, booking_id):
     context = {
         'form': form
     }
-    return render(request, 'BOOKING_APP/edit_booking.html', context)
+    return render(request, 'booking_app/edit_booking.html', context)
 
 
 def delete_booking(request, booking_id):
@@ -87,7 +87,7 @@ def register_request(request):
             return redirect("my_bookings")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
-    return render(request=request, template_name="BOOKING_APP/register.html", context={"register_form": form})
+    return render(request=request, template_name="booking_app/register.html", context={"register_form": form})
 
 
 def login_request(request):
@@ -106,7 +106,7 @@ def login_request(request):
         else:
             messages.error(request, "Invalid username or password.")
     form = AuthenticationForm()
-    return render(request=request, template_name="BOOKING_APP/login.html", context={"login_form": form})
+    return render(request=request, template_name="booking_app/login.html", context={"login_form": form})
 
 
 def logout_request(request):
@@ -124,7 +124,7 @@ def password_reset_request(request):
             if associated_users.exists():
                 for user in associated_users:
                     subject = "Password Reset Requested"
-                    email_template_name = "BOOKING_APP/password_reset_email.txt"
+                    email_template_name = "booking_app/password_reset_email.txt"
                     c_c = {
                         "email": user.email,
                         'domain': '127.0.0.1:8000',
@@ -143,4 +143,4 @@ def password_reset_request(request):
                     return redirect("login")
             messages.error(request, 'An invalid email has been entered.')
     password_reset_form = PasswordResetForm()
-    return render(request=request, template_name="BOOKING_APP/password_reset.html", context={"password_reset_form": password_reset_form})
+    return render(request=request, template_name="booking_app/password_reset.html", context={"password_reset_form": password_reset_form})

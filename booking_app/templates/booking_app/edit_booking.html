@@ -1,24 +1,23 @@
-{% extends "BOOKING_APP/base.html" %}
+{% extends "booking_app/base.html" %}
 
 {% block content %}
-{% include "BOOKING_APP/tabs.html" with active_tab='tab2' %}
+{% include "booking_app/tabs.html" %}
 <!-- Table Reservation Form -->
 <article id="book-a-table" class="book-a-table">
     <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
-                <h2 class="text-success">Book A Repair Slot</h2>
+                <h2 class="text-success">Change Your Repair Slot</h2>
                 <p class="mb-5">Fill out the booking form below, please remember to cancel your appointment if you
                     cannot make it.</p>
             </div>
         </div>
-        <form action="" method="POST" action="my_bookings" role="form">
+        <form method="POST" role="form">
             {% csrf_token %}
             {{ form }}
             <div id="form-btns">
-                <a role="button" href="{% url 'my_bookings' %}" class="btn btn-secondary float-left mt-3">See My
-                    Bookings</a>
-                <button type="submit" class="btn btn-success float-right mt-3">Book a Table</button>
+                <a role="button" href="{% url 'my_bookings' %}" class="btn btn-danger float-left mt-3">Cancel</a>
+                <button type="submit" class="btn btn-success float-right mt-3">Update Booking</button>
             </div>
         </form>
     </div>
