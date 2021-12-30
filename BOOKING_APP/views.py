@@ -30,6 +30,7 @@ def booking_view(request):
         if request.method == 'POST':
             form = BookingForm(request.POST)
             if form.is_valid():
+                form.instance.user = request.user
                 form.save()
             messages.success(request, "Booking successful.")
             return redirect('my_bookings')
@@ -45,7 +46,7 @@ def booking_view(request):
 def my_bookings(request):
     """ My Bookings Page """
     if request.user.is_authenticated:
-        bookings = Booking.objects.all()
+        bookings = request.user.hiuser.all()
         context = {
             'bookings': bookings
         }
