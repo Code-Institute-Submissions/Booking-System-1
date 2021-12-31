@@ -48,12 +48,25 @@
             <a href="/edit/{{ booking.id }}">
                <i class="fas fa-pen edit-delete edit"></i>
             </a>
-            <a href="/delete/{{ booking.id }}">
+            <a href="#" id="myBtn">
                <i class="fas fa-trash edit-delete delete"></i>
             </a>
          </td>
       </tr>
    </table>
+   <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+         <p>Are you sure you want to cancel this booking?</p>
+         <div id="conf-buttons">
+         <span class="close-me">Cancel</span>
+         <a id="conf-del" href="/delete/{{ booking.id }}">
+            Delete
+         </a>
+      </div>
+      </div>
+    
+    </div>
    {% endfor %}
    </div>
 </article>
