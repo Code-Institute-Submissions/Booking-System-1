@@ -24,6 +24,13 @@
 	<footer id="footer" class="fixed-bottom">
 		HELLO FOOTER
 	</footer>
+	<script>
+		setTimeout(function(){
+			let messages = document.getElementById("msg");
+			let alert = new bootstrap.Alert(messages);
+			alert.close();
+		}, 3000);
+	</script>
 </body>
 
 </html>
