@@ -227,8 +227,8 @@ label {
     margin-right: 10px;
   }
 
-  #conf-del {
-    display: inline-block;
+  #conf-del,
+  #conf-edit {
     color: red;
     font-size: 1em;
     text-decoration: none;
@@ -239,7 +239,8 @@ label {
   .close-me:hover,
   .close-me:focus,
   #conf-del:hover,
-  #conf-focus:hover {
+  #conf-focus:hover,
+  #conf-edit:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;

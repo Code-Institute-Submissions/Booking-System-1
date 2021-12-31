@@ -45,7 +45,7 @@
       </tr>
       <tr>
          <td>
-            <a href="/edit/{{ booking.id }}">
+            <a href="#" id="myBtn1">
                <i class="fas fa-pen edit-delete edit"></i>
             </a>
             <a href="#" id="myBtn">
@@ -57,11 +57,14 @@
    <div id="myModal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
-         <p>Are you sure you want to cancel this booking?</p>
+         <p id="modal-p">Are you sure you want to cancel this booking?</p>
          <div id="conf-buttons">
          <span class="close-me">Cancel</span>
          <a id="conf-del" href="/delete/{{ booking.id }}">
             Delete
+         </a>
+         <a id="conf-edit" href="/edit/{{ booking.id }}">
+            Edit
          </a>
       </div>
       </div>
