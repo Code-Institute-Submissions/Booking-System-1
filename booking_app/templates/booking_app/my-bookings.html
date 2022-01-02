@@ -45,31 +45,15 @@
       </tr>
       <tr>
          <td>
-            <a href="#" id="myBtn1">
+            <a href="/edit/{{ booking.id }}" class="test" data-confirm="Are you sure you want to edit your booking?">
                <i class="fas fa-pen edit-delete edit"></i>
             </a>
-            <a href="#" id="myBtn">
+            <a href="/delete/{{ booking.id }}" class="test" data-confirm="Are you sure you want to delete your booking?">
                <i class="fas fa-trash edit-delete delete"></i>
             </a>
          </td>
       </tr>
    </table>
-   <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-         <p id="modal-p">Are you sure you want to cancel this booking?</p>
-         <div id="conf-buttons">
-         <span class="close-me">Cancel</span>
-         <a id="conf-del" href="/delete/{{ booking.id }}">
-            Delete
-         </a>
-         <a id="conf-edit" href="/edit/{{ booking.id }}">
-            Edit
-         </a>
-      </div>
-      </div>
-    
-    </div>
    {% endfor %}
    </div>
 </article>

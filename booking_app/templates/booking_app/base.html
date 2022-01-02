@@ -31,43 +31,79 @@
 			alert.close();
 		}, 3000);
 
-	// Modal For Delete Confirmation
-	// Get the modal
-	var modal = document.getElementById("myModal");
+	var confirmBox = '<div class="modal fade confirm-modal">' +
+    '<div class="modal-dialog modal-sm" role="document">' +
+    '<div class="modal-content">' +
+    '</button>' +
+    '<div class="modal-body pb-5 modal-title"></div>' +
+    '<div class="modal-footer pt-3 pb-3">' +
+    '<a href="" class="btn btn-danger yesBtn btn-sm">Confirm</a>' +
+    '<button type="button" class="btn btn-secondary abortBtn btn-sm" data-dismiss="modal">Cancel</button>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>';
 
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
-	var btn1 = document.getElementById("myBtn1");
+var dialog = function(el, text, trueCallback, abortCallback) {
 
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close-me")[0];
+    el.click(function(e) {
 
-	// When the user clicks on the button, open the modal
-	btn.onclick = function() {
-	modal.style.display = "block";
-	document.getElementById("modal-p").innerHTML = "Would you like to Delete your booking?";
-	document.getElementById("conf-del").style.display = "unset";
-	document.getElementById("conf-edit").style.display = "none";
-	}
+        var thisConfirm = $(confirmBox).clone();
 
-	btn1.onclick = function() {
-	modal.style.display = "block";
-	document.getElementById("modal-p").innerHTML = "Would you like to Edit your booking?"
-	document.getElementById("conf-edit").style.display = "unset";
-	document.getElementById("conf-del").style.display = "none";
-	}
+        thisConfirm.find('.modal-body').text(text);
 
-	// When the user clicks on cancel, close the modal
-	span.onclick = function() {
-	modal.style.display = "none";
-	}
+        e.preventDefault();
+        $('body').append(thisConfirm);
+        $(thisConfirm).modal('show');
 
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	if (event.target == modal) {
-		modal.style.display = "none";
-	}
-	}
+        if (abortCallback) {
+            $(thisConfirm).find('.abortBtn').click(function(e) {
+                e.preventDefault();
+                abortCallback();
+                $(thisConfirm).modal('hide');
+            });
+        }
+
+        if (trueCallback) {
+            $(thisConfirm).find('.yesBtn').click(function(e) {
+                e.preventDefault();
+                trueCallback();
+                $(thisConfirm).modal('hide');
+            });
+        } else {
+
+            if (el.prop('nodeName') == 'A') {
+                $(thisConfirm).find('.yesBtn').attr('href', el.attr('href'));
+            }
+
+            if (el.attr('type') == 'submit') {
+                $(thisConfirm).find('.yesBtn').click(function(e) {
+                    e.preventDefault();
+                    el.off().click();
+                });
+            }
+        }
+
+        $(thisConfirm).on('hidden.bs.modal', function(e) {
+            $(this).remove();
+        });
+
+    });
+}
+
+// custom confirm
+$(function() {
+    $('[data-confirm]').each(function() {
+        dialog($(this), $(this).attr('data-confirm'));
+    });
+
+    dialog($('#customCallback'), "dialog with custom callback", function() {
+
+        alert("hi there");
+
+    });
+
+});
 	</script>
 </body>
 
