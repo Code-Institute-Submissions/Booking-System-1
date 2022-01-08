@@ -17,3 +17,4 @@ psycopg2==2.9.2
 pytz==2021.3
 s3transfer==0.5.0
 sqlparse==0.4.2
+whitenoise
