@@ -13,7 +13,8 @@ TIME_PICKER = [
         ('14:00pm', '14:00pm'), ('14:15pm', '14:15pm'), ('14:30pm', '14:30pm'), ('14:45pm', '14:45pm'),
         ('15:00pm', '15:00pm'), ('15:15pm', '15:15pm'), ('15:30pm', '15:30pm'), ('15:45pm', '15:45pm'),
         ('16:00pm', '16:00pm'), ('16:15pm', '16:15pm'), ('16:30pm', '16:30pm'), ('16:45pm', '16:45pm'),
-        ('17:00pm', '17:00pm'), ('17:15pm', '17:15pm'), ('17:30pm', '17:30pm'), ('17:45pm', '17:45pm')
+        ('17:00pm', '17:00pm'), ('17:15pm', '17:15pm'), ('17:30pm', '17:30pm'), ('17:45pm', '17:45pm'),
+        (' ', ' ')
     ]
 
 
@@ -26,7 +27,7 @@ class BookingForm(forms.ModelForm):
     email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     date = forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
-    time = forms.CharField(widget=forms.Select(choices=TIME_PICKER, attrs={'class': 'form-control'}))
+    time = forms.CharField(widget=forms.Select(choices=TIME_PICKER, attrs={'class': 'form-control'}), initial=' ')
     device = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     message = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
 

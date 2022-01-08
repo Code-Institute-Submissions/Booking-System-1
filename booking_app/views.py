@@ -39,12 +39,20 @@ def booking_view(request):
             time_str = request.POST.get('time')
             # DATABASE TIME
             bookTime = Booking.objects.filter(time=time_str)
-            if bookTime and bookDate:
+            if time_str != ' ':
+                if bookTime and bookDate:
+                    form = BookingForm()
+                    context = {
+                        'form': form
+                    }
+                    messages.error(request, "This time slot is taken, please choose another time.")
+                    return render(request, 'booking_app/booking.html', context)
+            else:
                 form = BookingForm()
                 context = {
                     'form': form
                 }
-                messages.error(request, "This time slot is taken, please choose another time.")
+                messages.error(request, "Please Select a time!.")
                 return render(request, 'booking_app/booking.html', context)
             if form.is_valid():
                 form.instance.user = request.user
@@ -87,12 +95,20 @@ def edit_booking(request, booking_id):
         time_str = request.POST.get('time')
         # DATABASE TIME
         bookTime = Booking.objects.filter(time=time_str)
-        if bookTime and bookDate:
+        if time_str != ' ':
+            if bookTime and bookDate:
+                form = BookingForm()
+                context = {
+                    'bookings': bookings
+                }
+                messages.error(request, "This time slot is taken, please choose another time.")
+                return render(request, 'booking_app/my-bookings.html', context)
+        else:
             form = BookingForm()
             context = {
                 'bookings': bookings
             }
-            messages.error(request, "This time slot is taken, please choose another time.")
+            messages.error(request, "Please Select a time! Try Again.")
             return render(request, 'booking_app/my-bookings.html', context)
         if form.is_valid():
             form.save()
