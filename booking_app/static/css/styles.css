@@ -4,20 +4,16 @@
     background-color: #96C345;
     text-align: center;
 }
-
 #top-nav a {
     color: #ffff;
 }
-
 #top-nav a:hover {
     color: black;
 }
-
 .socials {
     padding-right: 10px;
     font-size: 1.2em;
 }
-
 .top {
     text-align: center;
     display: inline-block;
@@ -26,44 +22,35 @@
     padding: 10px 0px;
     font-size: 1em;
 }
-
 .login {
     padding: 10px;
     color: #FAFAFA;
     font-weight: bold;
 }
-
 .login:hover {
     color: #000000;
 }
-
 .navbar-nav a {
     color: #95C345;
 }
-
 .navbar-nav a:hover {
     color: #000000;
 }
-
 .navbar-brand {
     max-width: 100px;
 }
-
 .active {
     border-bottom: 1px solid black;
 }
-
 .p-0 {
     width: 50%;
     margin: auto;
 }
-
 /* ------------------------------------------ index */
 .jumbotron {
     width: 75%;
     margin: 100px auto;
 }
-
 .display-4 {
     color: #96C345;
 }
@@ -71,11 +58,9 @@
 article {
     text-align: center;
 }
-
 #log-in-article {
     height: 100vh;
 }
-
 /* ---------------------------------------- Footer */
 #footer {
     color: #ffff;
@@ -84,11 +69,9 @@ article {
     height: 10%;
     text-align: center;
 }
-
 #copyright {
     margin-top: 35px;
 }
-
 /* ---------------------------------- Booking Page */
 #book-a-table {
     background-color: #FAFAFA;
@@ -99,44 +82,34 @@ article {
     margin: auto;
     height: 120vh;
 }
-
 .book-a-table p {
-	color: #9a9a9a;
+    color: #9a9a9a;
 }
-
 #form-btns {
     padding: 50px 0px;
 }
-
 form {
     width: 75%;
     margin: auto;
-    
 }
-
 label {
     display: block;
     width: 2em;
     padding-left: 0px;
     margin-top: 0.5em;
-    }
-
-
+}
 /* ---------------------------------- My Bookings Page */
 #log-in-article {
     height: auto;
 }
-
 #my-bookings {
     margin: auto;
     width: 100%;
     margin-top: 50px;
 }
-
 #my-book-h2 {
     margin-top: 20px;
 }
-
 .tab-book {
     border: 3px #000000 solid;
     display: inline-flex;
@@ -147,82 +120,64 @@ label {
     color: white;
     font-weight: bold;
 }
-
 .tab-book td {
     padding: 10px;
     text-align: left;
     border: 1px #96C345 solid;
     min-width: 330px;
 }
-
 .edit-delete {
     margin: 0px 10px;
     padding: 10px;
 }
-
 .edit {
     color:aqua;
 }
-
 .edit:hover {
     color:blue;
 }
-
 .delete {
     color: crimson;
 }
-
 .delete:hover {
     color:darkred;
 }
-
 #add-another {
     text-align: center;
 }
-
 .add-btn {
     text-align: center;
     min-width: 15%;
     margin: 5px auto 100px;
 }
-
-
-/* ---------------------------------- My Bookings Page */
-
+/* ---------------------------------- My Login Page */
 .py-5 {
     margin: 100px auto;
     text-align: center;
     background-color:#E9ECEF;
-    
 }
-
 #div_id_username label {
     min-width: 50%;
     margin: auto;
 }
-
 #div_id_password label {
     min-width: 50%;
     margin: auto;
 }
-
 #div_id_password {
     margin-bottom: 20px;
 }
-
-/* Modal */
+/* ---------------------------------- My Modal */
 .test {
     color:white;
     text-align:center;
-  }
-
-.modal-content {
-margin: 100% auto;
-padding: 20px;
-background-color: #96C346;
-text-align: center;
 }
-
+.modal-content {
+    margin: 100% auto;
+    padding: 20px;
+    background-color: #96C346;
+    text-align: center;
+}
 .modal-title {
     color: white;
     font-size: 1.5em;

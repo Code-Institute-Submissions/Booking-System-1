@@ -12,9 +12,9 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
-from .forms import BookingForm, NewUserForm, TIME_PICKER
-from .models import Booking
 from django.utils.dateparse import parse_date
+from .forms import BookingForm, NewUserForm
+from .models import Booking
 
 # Create your views here.
 
@@ -32,15 +32,15 @@ def booking_view(request):
             # DATE FROM FORM
             date_str = request.POST.get('date')
             # CONVERT STRING TO DATE
-            formDate = parse_date(date_str)
+            form_date = parse_date(date_str)
             # DATABASE DATE
-            bookDate = Booking.objects.filter(date=formDate)
+            book_date = Booking.objects.filter(date=form_date)
             # TIME FROM FORM
             time_str = request.POST.get('time')
             # DATABASE TIME
-            bookTime = Booking.objects.filter(time=time_str)
+            book_time = Booking.objects.filter(time=time_str)
             if time_str != ' ':
-                if bookTime and bookDate:
+                if book_time and book_date:
                     form = BookingForm()
                     context = {
                         'form': form
@@ -81,6 +81,7 @@ def my_bookings(request):
 
 
 def edit_booking(request, booking_id):
+    """ Edit booking """
     booking = get_object_or_404(Booking, id=booking_id)
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
@@ -88,15 +89,15 @@ def edit_booking(request, booking_id):
         # DATE FROM FORM
         date_str = request.POST.get('date')
         # CONVERT STRING TO DATE
-        formDate = parse_date(date_str)
+        form_date = parse_date(date_str)
         # DATABASE DATE
-        bookDate = Booking.objects.filter(date=formDate)
+        book_date = Booking.objects.filter(date=form_date)
         # TIME FROM FORM
         time_str = request.POST.get('time')
         # DATABASE TIME
-        bookTime = Booking.objects.filter(time=time_str)
+        book_time = Booking.objects.filter(time=time_str)
         if time_str != ' ':
-            if bookTime and bookDate:
+            if book_time and book_date:
                 form = BookingForm()
                 context = {
                     'bookings': bookings
@@ -122,6 +123,7 @@ def edit_booking(request, booking_id):
 
 
 def delete_booking(request, booking_id):
+    """ Delete booking """
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()
     messages.success(request, "Deletion successful.")
@@ -129,6 +131,7 @@ def delete_booking(request, booking_id):
 
 
 def register_request(request):
+    """ Registration """
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
@@ -142,6 +145,7 @@ def register_request(request):
 
 
 def login_request(request):
+    """ Login """
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -161,12 +165,14 @@ def login_request(request):
 
 
 def logout_request(request):
+    """ Log Out """
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect("booking_app")
 
 
 def password_reset_request(request):
+    """ Password Reset """
     if request.method == "POST":
         password_reset_form = PasswordResetForm(request.POST)
         if password_reset_form.is_valid():

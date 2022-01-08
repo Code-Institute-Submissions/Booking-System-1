@@ -1,28 +1,27 @@
 {% extends "booking_app/base.html" %}
-
 {% block content %}
 {% include "booking_app/tabs.html" with active_tab='tab2' %}
 <!-- Table Reservation Form -->
 <article id="book-a-table" class="book-a-table">
-    <div class="container" data-aos="fade-up">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-                <h2 class="text-success">Book A Repair Slot</h2>
-                <p class="mb-5">Fill out the booking form below, please remember to cancel your appointment if you
-                    cannot make it. Our Opening Times are Monday to Sunday 09:00 until 18:00.</p>
-            </div>
-        </div>
-        <form action="" method="POST" action="my_bookings" role="form">
-            {% csrf_token %}
-            {{ form }}
-            <div id="form-btns">
-                <a role="button" href="{% url 'my_bookings' %}" class="btn btn-secondary float-left mt-3">See My
-                    Bookings</a>
-                <button type="submit" class="btn btn-success float-right mt-3 test" data-confirm="Are you sure you want to make a booking?">Book an appointment</button>
-            </div>
-        </form>
-    </div>
+   <div class="container" data-aos="fade-up">
+      <div class="row">
+         <div class="col-md-8 offset-md-2 text-center">
+            <h2 class="text-success">Book A Repair Slot</h2>
+            <p class="mb-5">Fill out the booking form below, please remember to cancel your appointment if you
+               cannot make it. Our Opening Times are Monday to Sunday 09:00 until 18:00.
+            </p>
+         </div>
+      </div>
+      <form action="" method="POST" action="my_bookings" role="form">
+         {% csrf_token %}
+         {{ form }}
+         <div id="form-btns">
+            <a role="button" href="{% url 'my_bookings' %}" class="btn btn-secondary float-left mt-3">See My
+            Bookings</a>
+            <button type="submit" class="btn btn-success float-right mt-3 test" data-confirm="Are you sure you want to make a booking?">Book an appointment</button>
+         </div>
+      </form>
+   </div>
 </article>
 <!-- End Table Reservation Form -->
-
 {%endblock%}

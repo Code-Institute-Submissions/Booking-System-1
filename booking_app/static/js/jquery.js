@@ -1,10 +1,10 @@
-setTimeout(function(){
-			let messages = document.getElementById("msg");
-			let alert = new bootstrap.Alert(messages);
-			alert.close();
-		}, 3000);
+setTimeout(function() {
+    let messages = document.getElementById("msg");
+    let alert = new bootstrap.Alert(messages);
+    alert.close();
+}, 3000);
 
-	var confirmBox = '<div class="modal fade confirm-modal">' +
+var confirmBox = '<div class="modal fade confirm-modal">' +
     '<div class="modal-dialog modal-sm" role="document">' +
     '<div class="modal-content">' +
     '</button>' +

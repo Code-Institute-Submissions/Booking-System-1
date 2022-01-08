@@ -19,7 +19,9 @@ TIME_PICKER = [
 
 
 class BookingForm(forms.ModelForm):
+    """ Booking Form """
     class Meta:
+        """ Booking Form Meta """
         model = Booking
         fields = ['name', 'email', 'phone', 'date', 'time', 'device', 'message']
 
@@ -33,9 +35,11 @@ class BookingForm(forms.ModelForm):
 
 
 class NewUserForm(UserCreationForm):
+    """ Registration Form """
     email = forms.EmailField(required=True)
 
     class Meta:
+        """ Registration Form Meta """
         model = User
         fields = ("username", "email", "password1", "password2")
 

@@ -1,31 +1,28 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<title>Booking App</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<!-- Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-	<link rel="stylesheet" href="../../static/css/styles.css">
-</head>
-
-<body>
-	<!-- Content Goes here -->
-	{% block content %}
-	{% endblock content %}
-	<footer id="footer" class="fixed-bottom">
-		<h6 id="copyright"><span><i class="far fa-copyright"></i></span>Copyright - Geco Tech Network 2020 - 2022</h6>
-	</footer>
-	{% load static %}
-        <script src="{% static 'js/jquery.js' %}"></script>
-</body>
-
+   <head>
+      <title>Booking App</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <!-- Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+      <link rel="stylesheet" href="../../static/css/styles.css">
+   </head>
+   <body>
+      <!-- Content Goes here -->
+      {% block content %}
+      {% endblock content %}
+      <footer id="footer" class="fixed-bottom">
+         <h6 id="copyright"><span><i class="far fa-copyright"></i></span>Copyright - Geco Tech Network 2020 - 2022</h6>
+      </footer>
+      {% load static %}
+      <script src="{% static 'js/jquery.js' %}"></script>
+   </body>
 </html>

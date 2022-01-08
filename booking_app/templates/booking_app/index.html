@@ -1,14 +1,13 @@
 {% extends "booking_app/base.html" %}
-
 {% block content %}
 {% include "booking_app/tabs.html" with active_tab='tab1' %}
 <div class="jumbotron">
-  <h1 class="display-4">Phone Repair Booking Form</h1>
-  <p class="lead">Get your device booked in for a repair or service today.</p>
-  <hr class="my-4">
-  <p>Simply fill in our form and submit your date and time slot..</p>
-  <p class="lead">
-    <a class="btn btn-success btn-lg" href="{% url 'booking_view' %}" role="button">Book Now</a>
-  </p>
+   <h1 class="display-4">Phone Repair Booking Form</h1>
+   <p class="lead">Get your device booked in for a repair or service today.</p>
+   <hr class="my-4">
+   <p>Simply fill in our form and submit your date and time slot..</p>
+   <p class="lead">
+      <a class="btn btn-success btn-lg" href="{% url 'booking_view' %}" role="button">Book Now</a>
+   </p>
 </div>
 {%endblock%}
