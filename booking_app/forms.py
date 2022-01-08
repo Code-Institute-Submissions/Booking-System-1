@@ -4,16 +4,6 @@ from django.contrib.auth.models import User
 from .models import Booking
 
 
-DAYS_PICKER = [
-    ('Monday', 'Monday'),
-    ('Tuesday', 'Tuesday'),
-    ('Wednesday', 'Wednesday'),
-    ('Thursday', 'Thursday'),
-    ('Friday', 'Friday'),
-    ('Saturday', 'Saturday'),
-    ('Sunday', 'Sunday')
-]
-
 TIME_PICKER = [
         ('09:00am', '09:00am'), ('09:15am', '09:15am'), ('09:30am', '09:30am'), ('09:45am', '09:45am'),
         ('10:00am', '10:00am'), ('10:15am', '10:15am'), ('10:30am', '10:30am'), ('10:45am', '10:45am'),
@@ -25,6 +15,7 @@ TIME_PICKER = [
         ('16:00pm', '16:00pm'), ('16:15pm', '16:15pm'), ('16:30pm', '16:30pm'), ('16:45pm', '16:45pm'),
         ('17:00pm', '17:00pm'), ('17:15pm', '17:15pm'), ('17:30pm', '17:30pm'), ('17:45pm', '17:45pm')
     ]
+
 
 class BookingForm(forms.ModelForm):
     class Meta:

@@ -12,9 +12,9 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
-from .forms import BookingForm
-from .forms import NewUserForm
+from .forms import BookingForm, NewUserForm, TIME_PICKER
 from .models import Booking
+from django.utils.dateparse import parse_date
 
 # Create your views here.
 
@@ -29,6 +29,23 @@ def booking_view(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
             form = BookingForm(request.POST)
+            # DATE FROM FORM
+            date_str = request.POST.get('date')
+            # CONVERT STRING TO DATE
+            formDate = parse_date(date_str)
+            # DATABASE DATE
+            bookDate = Booking.objects.filter(date=formDate)
+            # TIME FROM FORM
+            time_str = request.POST.get('time')
+            # DATABASE TIME
+            bookTime = Booking.objects.filter(time=time_str)
+            if bookTime and bookDate:
+                form = BookingForm()
+                context = {
+                    'form': form
+                }
+                messages.error(request, "This time slot is taken, please choose another time.")
+                return render(request, 'booking_app/booking.html', context)
             if form.is_valid():
                 form.instance.user = request.user
                 form.save()
@@ -59,6 +76,24 @@ def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
+        bookings = request.user.hiuser.all()
+        # DATE FROM FORM
+        date_str = request.POST.get('date')
+        # CONVERT STRING TO DATE
+        formDate = parse_date(date_str)
+        # DATABASE DATE
+        bookDate = Booking.objects.filter(date=formDate)
+        # TIME FROM FORM
+        time_str = request.POST.get('time')
+        # DATABASE TIME
+        bookTime = Booking.objects.filter(time=time_str)
+        if bookTime and bookDate:
+            form = BookingForm()
+            context = {
+                'bookings': bookings
+            }
+            messages.error(request, "This time slot is taken, please choose another time.")
+            return render(request, 'booking_app/my-bookings.html', context)
         if form.is_valid():
             form.save()
         messages.success(request, "Edit successful.")
