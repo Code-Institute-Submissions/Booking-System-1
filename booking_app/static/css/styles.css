@@ -191,3 +191,14 @@ label {
 #register-button {
     margin: 20px auto;
 }
+.requiredField {
+    width: 100%;
+    text-align: left;
+}
+.py-5 ul{
+    color: red;
+    text-align: left;
+    width: fit-content;
+    margin: auto;
+    font-size: smaller;
+}

@@ -6,7 +6,23 @@
 <div class="container py-5">
    <h1>Register</h1>
    <p>Please choose a Username without spaces.</p>
-   <p>Your password should contain a capital letter and at least 1 special character.</p>
+   <ul>
+      <li>
+         Your password can’t be too similar to your other personal information.
+      </li>
+      <li>
+         Your password must contain at least 8 characters.
+      </li>
+      <li>
+         Your password can’t be a commonly used password.
+      </li>
+      <li>
+         Your password can’t be entirely numeric.
+      </li>
+      <li>
+         Password field and password confirmation field MUST match
+      </li>
+   </ul>
    <form method="POST">
       {% csrf_token %}
       {{ register_form|crispy }}

@@ -53,3 +53,8 @@ class NewUserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+    def __init__(self, *args, **kwargs):
+        super(NewUserForm, self).__init__(*args, **kwargs)
+        self.fields['password1'].label = "Password"
+        self.fields['password2'].label = "Password Confirmation"
