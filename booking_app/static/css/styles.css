@@ -156,17 +156,16 @@ label {
     text-align: center;
     background-color:#E9ECEF;
 }
-#div_id_username label {
-    min-width: 50%;
-    margin: auto;
+#login-form label {
+    min-width: 50% !important;
+    margin: auto !important;
+    text-align: center !important;
 }
-#div_id_password label {
-    min-width: 50%;
-    margin: auto;
+
+#login-submit {
+    margin-top: 20px;
 }
-#div_id_password {
-    margin-bottom: 20px;
-}
+
 /* ---------------------------------- My Modal */
 .test {
     color:white;
