@@ -36,12 +36,16 @@ class BookingForm(forms.ModelForm):
 
 class NewUserForm(UserCreationForm):
     """ Registration Form """
-    email = forms.EmailField(required=True)
+    username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control requiredField'}))
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control requiredField'}))
+    password1 = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control requiredField', 'type': 'password'}))
+    password2 = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control requiredField', 'type': 'password'}))
 
     class Meta:
         """ Registration Form Meta """
         model = User
         fields = ("username", "email", "password1", "password2")
+        
 
     def save(self, commit=True):
         user = super(NewUserForm, self).save(commit=False)

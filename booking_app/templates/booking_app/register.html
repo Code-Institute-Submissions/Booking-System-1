@@ -5,10 +5,12 @@
 {% include "booking_app/tabs.html" with active_tab='register' %}
 <div class="container py-5">
    <h1>Register</h1>
+   <p>Please choose a Username without spaces.</p>
+   <p>Your password should contain a capital letter and at least 1 special character.</p>
    <form method="POST">
       {% csrf_token %}
       {{ register_form|crispy }}
-      <button class="btn btn-primary" type="submit">Register</button>
+      <button class="btn btn-primary" id="register-button" type="submit">Register</button>
    </form>
    <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
 </div>
