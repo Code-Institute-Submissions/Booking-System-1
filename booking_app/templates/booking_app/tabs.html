@@ -5,7 +5,7 @@
           <a href="https://twitter.com/TechGeco" target="_blank" class="socials"><span><i class="fab fa-twitter-square"></i></span></a>
           <a href="mailto:support@geco-tech.net" target="_blank" class="socials"><span><i class="fas fa-envelope"></i></span></a>
        </p>
-       <p class="top">
+       <p class="top" id="question">
           HAVE A QUESTION? GET IN TOUCH!
        </p>
        <p class="top">
@@ -13,8 +13,8 @@
           <a class="login" href="#">Welcome, {{user.username}}</a>
           <a class="login test" data-confirm="Are you sure you want to log out?" href="/logout">Logout</a>
           {% else %}
-          <a class="{% if active_tab == 'login' %} active{% endif %} login" href="{% url 'login' %}">Log in</a>
-          <a class="{% if active_tab == 'register' %} active{% endif %} login" href="{% url 'register' %}">Register</a>
+          <a class="{% if active_tab == 'login' %} active{% endif %}login" href="{% url 'login' %}">Log in</a>
+          <a class="{% if active_tab == 'register' %} active{% endif %}login" href="{% url 'register' %}">Register</a>
           {% endif %}
        </p>
     </div>

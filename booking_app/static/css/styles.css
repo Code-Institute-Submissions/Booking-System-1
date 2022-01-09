@@ -201,3 +201,26 @@ label {
     margin: auto;
     font-size: smaller;
 }
+@media only screen and (max-width: 888px) {
+    #question {
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 729px) {
+    #question {
+        display: none;
+    }
+}
+@media only screen and (max-width: 729px) {
+    .top {
+        width: 50%;
+    }
+    .login {
+        background-color: white;
+        color: #95C345 !important;
+    }
+    .login:hover {
+        background-color: #95C345;
+        color: white !important;
+    }
+}
