@@ -1,108 +1,107 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Booking App
+## By Clayton File
 
-Welcome TechCentreUK,
+![BookingAppHomepage](https://github.com/TechCentreUK/Booking-System/tree/main/booking_app/templates/booking_app/images/homepage.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table Of Contents
+1. [Intro](#intro)
+2. [Technologies](#technologies)
+3. [Bugs & Fixes](#bugs--fixes)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+6. [Credits](#credits)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Intro
+A Heroku based mobile phone / device repair slot booking app.
 
-## Gitpod Reminders
+### Design
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+-[Flow Chart]() 
 
-`python3 -m http.server`
+### Goals
 
-A blue button should appear to click: _Make Public_,
+- To enable the user to book their repair time slot without the need to call and arrange.
+- To enable the admin / company employee to check booked appointments backend.
 
-Another blue button should appear to click: _Open Browser_.
+### Audience
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- The application is aimed at potential customers needing to repair their device and book a time slot.
 
-A blue button should appear to click: _Make Public_,
+## Technologies
 
-Another blue button should appear to click: _Open Browser_.
+### Languages
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [Jquery](https://en.wikipedia.org/wiki/JQuery)
 
-To log into the Heroku toolbelt CLI:
+### Other
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- [Django Web Framework](https://en.wikipedia.org/wiki/Django_(web_framework))
+- [Heroku](https://en.wikipedia.org/wiki/Heroku)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Bugs & Fixes
 
-------
+- If i had more time i would come up with a solution to not allow "expired" dates to be booked.
 
-## Release History
+## Testing
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- [Flow Chart](https://lucid.app/lucidchart/863b97f9-4b87-4309-9976-a84d70c8212e/edit?invitationId=inv_f650388a-840e-40cc-bb39-51531df06026)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Deployment
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Heroku
+This application will be deployed via [Heroku](https://heroku.com)
+1. Ensure all code is ready for deployment. 
+2. Log into or sign up to Heroku
+3. From Dashboard click "New" and select "create new app" from the drop-down menu.
+4. Choose a unique but available name for your app and select your region.
+5. Click "Create App".
+6. Navigate to "Settings" and scroll down to "build packs".
+7. Click "build packs" and then click both "python" and "node.js". Please note node.js is needed for the mock terminal and must be BELOW python on the list.
+   they can be clicked and dragged to move.
+8. Navigate to the "Deploy" section.
+9. Scroll down to "Deployment Method" and select "GitHub".
+10. Authorize the connection of Heroku to GitHub.
+11. Search for your GitHub repository name, and select the correct repository.
+12. For Deployment there are two options, Automatic Deployments or Manual.
+    - Automatic Deployment: This will prompt Heroku to re-build your app each time you push your code to GitHub.
+    - Manual Deployment: This will only prompt Heroku to build your app when you manually tell it to do so.
+13. Ensure the correct branch is selected "master/Main", and select the deployment method which suites you.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Forking
+If you wish to edit and experiment with the code you can fork the repository.
+Forking a repository allows you to experiment without the original project being affected.
+1. Navigate to the repository.
+2. In the top right of the page, below your profile you should see a "Fork" button. Simply click on this.
+3. A copy of the forked repository will then be added to your own Repositories Page.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Clone
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+1. Navigate to the Github Repository you want to clone.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+2. Click the drop down menu labelled "Clone".
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+3. Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+4. Open your developement editor and open a terminal window in a directory of your choice.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+5. Use the 'git clone' command in terminal followed by the copied git URL.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+6. A clone of the project will be created locally on your local machine.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Credits
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- [Whitenoise](https://devcenter.heroku.com/articles/django-assets)
+For teaching me how to install whitenoise for my static assets.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- [Stack Overflow - Modals](https://stackoverflow.com/questions/6929416/custom-confirm-dialog-in-javascript)
+For teaching me how to create effective confirmation modals.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- [Ordinary Coders - Login](https://ordinarycoders.com/blog/article/django-user-register-login-logout)
+- [Ordinary Coders - Password Reset](https://ordinarycoders.com/blog/article/django-password-reset)
+For Teaching me how to create front end user login / logout and registration.
 
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+### Acknowledgment
+I'd like to thank my mentor [Daisy McGirr](https://github.com/Daisy-McG) for her continued guidance and support throughout my project.
