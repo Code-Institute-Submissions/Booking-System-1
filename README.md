@@ -1,7 +1,7 @@
 # Booking App
 ## By Clayton File
 
-![BookingAppHomepage](https://github.com/TechCentreUK/Booking-System/tree/main/booking_app/templates/booking_app/images/homepage.png)
+![BookingAppHomepage](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/homepage.png)
 
 ## Table Of Contents
 1. [Intro](#intro)
@@ -16,7 +16,16 @@ A Heroku based mobile phone / device repair slot booking app.
 
 ### Design
 
--[Flow Chart]() 
+The Design ideas are from the existing company Geco Tech Network ( With Permission ) and adapted the app to match their current layout and colour scheme.
+- [Geco Tech Network](https://geco-tech.net/)
+
+### User Stories
+Using Github "Issues" and "Projects" User stories are created to get a basic understanding of different users needs.
+- [Issues](https://github.com/TechCentreUK/Booking-System/issues)
+![Issues](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/issues.png)
+
+- [Projects](https://github.com/TechCentreUK/Booking-System/projects/1)
+![Projects](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/projects.png)
 
 ### Goals
 
@@ -40,6 +49,7 @@ A Heroku based mobile phone / device repair slot booking app.
 
 - [Django Web Framework](https://en.wikipedia.org/wiki/Django_(web_framework))
 - [Heroku](https://en.wikipedia.org/wiki/Heroku)
+- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/)
 
 ## Bugs & Fixes
 
@@ -47,7 +57,12 @@ A Heroku based mobile phone / device repair slot booking app.
 
 ## Testing
 
-- [Flow Chart](https://lucid.app/lucidchart/863b97f9-4b87-4309-9976-a84d70c8212e/edit?invitationId=inv_f650388a-840e-40cc-bb39-51531df06026)
+![Flow Chart](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/flowchart.png)
+- [Flow Chart](https://lucid.app/)
+
+![Lighthouse](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/lighthouse.png)
+- [Google Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse)
+Lighthouse was used to ensure performance, best practices and colours didnt prevent readability. There was a few factors which doesnt allow the score to add up to 100% including no HTTPS connection with heroku.
 
 ## Deployment
 
