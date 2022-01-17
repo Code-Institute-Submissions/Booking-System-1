@@ -50,6 +50,9 @@ Using Github "Issues" and "Projects" User stories are created to get a basic und
 - [Django Web Framework](https://en.wikipedia.org/wiki/Django_(web_framework))
 - [Heroku](https://en.wikipedia.org/wiki/Heroku)
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/)
+- [Cloudinary](https://cloudinary.com/)
+- [psycopg2](https://pypi.org/project/psycopg2/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ## Bugs & Fixes
 
@@ -63,6 +66,30 @@ Using Github "Issues" and "Projects" User stories are created to get a basic und
 ![Lighthouse](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/lighthouse.png)
 - [Google Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse)
 Lighthouse was used to ensure performance, best practices and colours didnt prevent readability. There was a few factors which doesnt allow the score to add up to 100% including no HTTPS connection with heroku.
+
+During the build of my project i was testing code back and forth when making changes to ensure everything works as it should, for example i had to make sure a date and time could not be double booked and alerted the user with an error message if the date and time was already booked. Given more time i would have made some changes and removed time slots that was booked and refused older dates from being selected.
+![Error Message](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/time-slot-error.png)
+
+Another important piece of testing was to ensure a user cannot see other users bookings and vice versa and only the admin panel could see the full bookings. To test this i had to create a couple accounts and create bookings and then check the users 'my bookings' page and make sure i could only see the bookings dedicated to the signed in user. You can see below we passed the user foreign key in our model the related_name of 'hiuser' which allowed us to filter through in our views.py
+
+## models.py
+```
+user = models.ForeignKey(User, default='', null=True, on_delete=models.CASCADE, related_name='hiuser')
+```
+## views.py
+```
+def my_bookings(request):
+    """ My Bookings Page """
+    if request.user.is_authenticated:
+        bookings = request.user.hiuser.all()
+        context = {
+            'bookings': bookings
+        }
+        return render(request, 'booking_app/my-bookings.html', context)
+    else:
+        return redirect('/login/')
+```
+
 
 ## Deployment
 
