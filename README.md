@@ -56,7 +56,7 @@ Using Github "Issues" and "Projects" User stories are created to get a basic und
 
 ## Bugs & Fixes
 
-- If i had more time i would come up with a solution to not allow "expired" dates to be booked.
+- Given more time i would have greyed out unavailable date and times and came up with a cleaner solution.
 
 ## Testing
 
