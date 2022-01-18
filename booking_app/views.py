@@ -1,4 +1,5 @@
 """ Import render """
+from datetime import date
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
@@ -29,30 +30,34 @@ def booking_view(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
             form = BookingForm(request.POST)
-            # DATE FROM FORM
             date_str = request.POST.get('date')
-            # CONVERT STRING TO DATE
             form_date = parse_date(date_str)
-            # DATABASE DATE
             book_date = Booking.objects.filter(date=form_date)
-            # TIME FROM FORM
             time_str = request.POST.get('time')
-            # DATABASE TIME
             book_time = Booking.objects.filter(time=time_str)
-            if time_str != ' ':
-                if book_time and book_date:
+            today = str(date.today())
+            if date_str >= today:
+                if time_str != ' ':
+                    if book_time and book_date:
+                        form = BookingForm()
+                        context = {
+                            'form': form
+                        }
+                        messages.error(request, "This time slot is taken, please choose another time.")
+                        return render(request, 'booking_app/booking.html', context)
+                else:
                     form = BookingForm()
                     context = {
                         'form': form
                     }
-                    messages.error(request, "This time slot is taken, please choose another time.")
+                    messages.error(request, "Please Select a time!.")
                     return render(request, 'booking_app/booking.html', context)
             else:
                 form = BookingForm()
                 context = {
-                    'form': form
-                }
-                messages.error(request, "Please Select a time!.")
+                        'form': form
+                    }
+                messages.error(request, "Please Select a present or future date.")
                 return render(request, 'booking_app/booking.html', context)
             if form.is_valid():
                 form.instance.user = request.user
@@ -86,15 +91,10 @@ def edit_booking(request, booking_id):
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         bookings = request.user.hiuser.all()
-        # DATE FROM FORM
         date_str = request.POST.get('date')
-        # CONVERT STRING TO DATE
         form_date = parse_date(date_str)
-        # DATABASE DATE
         book_date = Booking.objects.filter(date=form_date)
-        # TIME FROM FORM
         time_str = request.POST.get('time')
-        # DATABASE TIME
         book_time = Booking.objects.filter(time=time_str)
         if time_str != ' ':
             if book_time and book_date:
