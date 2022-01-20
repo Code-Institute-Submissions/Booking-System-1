@@ -19,17 +19,37 @@ from django.contrib.auth import views as auth_views
 from booking_app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.booking_app, name='booking_app'),
-    path('booking/', views.booking_view, name="booking_view"),
-    path('my-bookings/', views.my_bookings, name="my_bookings"),
-    path('edit/<booking_id>', views.edit_booking, name='edit_booking'),
-    path('delete/<booking_id>', views.delete_booking, name="delete_booking"),
-    path('register/', views.register_request, name="register"),
+    path("admin/", admin.site.urls),
+    path("", views.booking_app, name="booking_app"),
+    path("booking/", views.booking_view, name="booking_view"),
+    path("my-bookings/", views.my_bookings, name="my_bookings"),
+    path("edit/<booking_id>", views.edit_booking, name="edit_booking"),
+    path("delete/<booking_id>", views.delete_booking, name="delete_booking"),
+    path("register/", views.register_request, name="register"),
     path("login/", views.login_request, name="login"),
     path("logout", views.logout_request, name="logout"),
-    path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='booking_app/password_reset_done.html'), name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="booking_app/password_reset_confirm.html"), name='password_reset_confirm'),
-    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='booking_app/password_reset_complete.html'), name='password_reset_complete'),
-    path("password_reset", views.password_reset_request, name="password_reset"),
+    path(
+        "password_reset/done/",
+        auth_views.PasswordResetDoneView.as_view(
+            template_name="booking_app/password_reset_done.html"
+        ),
+        name="password_reset_done",
+    ),
+    path(
+        "reset/<uidb64>/<token>/",
+        auth_views.PasswordResetConfirmView.as_view(
+            template_name="booking_app/password_reset_confirm.html"
+        ),
+        name="password_reset_confirm",
+    ),
+    path(
+        "reset/done/",
+        auth_views.PasswordResetCompleteView.as_view(
+            template_name="booking_app/password_reset_complete.html"
+        ),
+        name="password_reset_complete",
+    ),
+    path(
+        "password_reset",
+        views.password_reset_request, name="password_reset"),
 ]
