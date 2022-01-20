@@ -45,9 +45,7 @@ TIME_PICKER = [
 
 
 class Booking(models.Model):
-    """
-    Booking Form
-    """
+    """ A model to create a booking """
     name = models.CharField(max_length=50, null=False, blank=False)
     email = models.CharField(max_length=50, null=False, blank=False)
     phone = PhoneField(blank=True, null=False)

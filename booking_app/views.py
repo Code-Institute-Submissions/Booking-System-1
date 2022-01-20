@@ -1,4 +1,3 @@
-""" Import render """
 from datetime import date
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate, logout
@@ -21,12 +20,12 @@ from .models import Booking
 
 
 def booking_app(request):
-    """ Home Page """
+    """ A view to return to the home page """
     return render(request, "booking_app/index.html")
 
 
 def booking_view(request):
-    """ Booking Page """
+    """ A view to display the booking page and form """
     if request.user.is_authenticated:
         if request.method == "POST":
             form = BookingForm(request.POST)
@@ -43,13 +42,11 @@ def booking_view(request):
                         context = {"form": form}
                         messages.error(
                             request,
-                            "This time slot is taken,"
+                            "This time slot is taken," +
                             " please choose another time.",
                         )
                         return render(
-                            request,
-                            "booking_app/booking.html",
-                            context
+                            request, "booking_app/booking.html", context
                         )
                 else:
                     form = BookingForm()
@@ -60,8 +57,7 @@ def booking_view(request):
                 form = BookingForm()
                 context = {"form": form}
                 messages.error(
-                    request,
-                    "Please Select a present or future date."
+                    request, "Please Select a present or future date."
                 )
                 return render(request, "booking_app/booking.html", context)
             if form.is_valid():
@@ -77,7 +73,7 @@ def booking_view(request):
 
 
 def my_bookings(request):
-    """ My Bookings Page """
+    """ A view to display the my bookings page and bookings """
     if request.user.is_authenticated:
         bookings = request.user.hiuser.all()
         context = {"bookings": bookings}
@@ -87,7 +83,7 @@ def my_bookings(request):
 
 
 def edit_booking(request, booking_id):
-    """ Edit booking """
+    """ A view to edit booking and display the populated form """
     booking = get_object_or_404(Booking, id=booking_id)
     if request.method == "POST":
         form = BookingForm(request.POST, instance=booking)
@@ -101,17 +97,17 @@ def edit_booking(request, booking_id):
         if date_str >= today:
             if time_str != "Select a time":
                 if book_time and book_date:
-                    form = BookingForm()
-                    context = {"bookings": bookings}
-                    messages.error(
-                        request,
-                        "This time slot is taken, please choose another time."
-                    )
-                    return render(
-                        request,
-                        "booking_app/my-bookings.html",
-                        context
-                    )
+                    if booking != form:
+                        form = BookingForm()
+                        context = {"bookings": bookings}
+                        messages.error(
+                            request,
+                            "This time slot is taken," +
+                            " please choose another time.",
+                        )
+                        return render(
+                            request, "booking_app/my-bookings.html", context
+                        )
             else:
                 form = BookingForm()
                 context = {"bookings": bookings}
@@ -122,7 +118,6 @@ def edit_booking(request, booking_id):
             context = {"form": form}
             messages.error(request, "Please Select a present or future date.")
             return render(request, "booking_app/booking.html", context)
-
         if form.is_valid():
             form.save()
         messages.success(request, "Edit successful.")
@@ -133,7 +128,7 @@ def edit_booking(request, booking_id):
 
 
 def delete_booking(request, booking_id):
-    """ Delete booking """
+    """ A view to delete a booking """
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()
     messages.success(request, "Deletion successful.")
@@ -141,7 +136,7 @@ def delete_booking(request, booking_id):
 
 
 def register_request(request):
-    """ Registration """
+    """ A view to display a registration form """
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
@@ -161,7 +156,7 @@ def register_request(request):
 
 
 def login_request(request):
-    """ Login """
+    """ A view to display a login form and allow user to login """
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -185,14 +180,14 @@ def login_request(request):
 
 
 def logout_request(request):
-    """ Log Out """
+    """ A view to allow user to log out """
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect("booking_app")
 
 
 def password_reset_request(request):
-    """ Password Reset """
+    """ A view to allow user to reset password via email """
     if request.method == "POST":
         password_reset_form = PasswordResetForm(request.POST)
         if password_reset_form.is_valid():
