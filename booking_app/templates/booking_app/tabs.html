@@ -1,13 +1,17 @@
+<!-- Header -->
 <header>
+   <!-- Top Bar Left -->
    <div id="top-nav">
       <p class="top">
          <a href="https://www.facebook.com/gecotechnetwork/" target="_blank" class="socials"><span><i class="fab fa-facebook"></i></span></a>
          <a href="https://twitter.com/TechGeco" target="_blank" class="socials"><span><i class="fab fa-twitter-square"></i></span></a>
          <a href="mailto:support@geco-tech.net" target="_blank" class="socials"><span><i class="fas fa-envelope"></i></span></a>
       </p>
+      <!-- Top Bar Center -->
       <p class="top" id="question">
          HAVE A QUESTION? GET IN TOUCH!
       </p>
+      <!-- Top Bar Right -->
       <p class="top">
          {% if user.is_authenticated %}
          <a class="login" href="{% url 'my_bookings' %}">Welcome, {{user.username}}</a>
@@ -37,6 +41,7 @@
          </ul>
       </div>
    </nav>
+   <!-- Messages -->
    {% if messages %}
    {% for message in messages %}
    <div id="msg" class="container-fluid p-0">

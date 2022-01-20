@@ -1,7 +1,7 @@
 {% extends "booking_app/base.html" %}
 {% block content %}
 {% include "booking_app/tabs.html" %}
-<!-- Booking Form -->
+<!-- Edit Booking Form -->
 <article id="book-a-table" class="book-a-table">
    <div class="container" data-aos="fade-up">
       <div class="row">
@@ -16,11 +16,13 @@
          {% csrf_token %}
          {{ form }}
          <div id="form-btns">
+            <!-- Cancel Button -->
             <a role="button" href="{% url 'my_bookings' %}" class="btn btn-danger float-left mt-3">Cancel</a>
+            <!-- Update Booking Button -->
             <button type="submit" class="btn btn-success float-right mt-3 test" data-confirm="Update booking?">Update Booking</button>
          </div>
       </form>
    </div>
 </article>
-<!-- End Booking Form -->
+<!-- End Edit Booking Form -->
 {%endblock%}

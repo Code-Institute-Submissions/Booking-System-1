@@ -16,8 +16,10 @@
          {% csrf_token %}
          {{ form.as_p }}
          <div id="form-btns">
+            <!-- Cancel and go to my bookings button -->
             <a role="button" href="{% url 'my_bookings' %}" class="btn btn-secondary float-left mt-3">See My
             Bookings</a>
+            <!-- Book Booking Button -->
             <button type="submit" class="btn btn-success float-right mt-3 test" data-confirm="Are you sure you want to make a booking?">Book an appointment</button>
          </div>
       </form>
