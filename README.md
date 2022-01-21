@@ -5,11 +5,12 @@
 
 ## Table Of Contents
 1. [Intro](#intro)
-2. [Technologies](#technologies)
-3. [Bugs & Fixes](#bugs--fixes)
-4. [Testing](#testing)
-5. [Deployment](#deployment)
-6. [Credits](#credits)
+2. [Wireframe](#wireframe)
+3. [Technologies](#technologies)
+4. [Bugs & Fixes](#bugs--fixes)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
 
 ## Intro
 A Heroku based mobile phone / device repair slot booking app.
@@ -17,7 +18,18 @@ A Heroku based mobile phone / device repair slot booking app.
 ### Design
 
 The Design ideas are from the existing company Geco Tech Network ( With Permission ) and adapted the app to match their current layout and colour scheme.
+Their website can be found here:
 - [Geco Tech Network](https://geco-tech.net/)
+
+### Colours
+We maintained the same colour pallete throughout to maintain consistency and ensure the website was a matching colour scheme to the existing Geco Tech Website. The green throughout the website is:
+```
+#96C345
+```
+
+## Wireframe
+I had a live version of a wireframe to use as the website was structured to fit in with the style and theme of Geco Tech Network website.
+![Geco Tech Website](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/geco-tech.png)
 
 ### User Stories
 Using Github "Issues" and "Projects" User stories are created to get a basic understanding of different users needs.
@@ -26,6 +38,18 @@ Using Github "Issues" and "Projects" User stories are created to get a basic und
 
 - [Projects](https://github.com/TechCentreUK/Booking-System/projects/1)
 ![Projects](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/static/images/projects.png)
+
+- Customers / Site Users
+* As a user, I am able to access the site on my mobile, tablet, and desktop which is adapted to provide the best experience.
+* As a Customer i can log in so that I can edit or delete my booking.
+* As a Customer i can make a booking so that i can book a time slot for getting my device repaired.
+* As a Customer i can reset my password by email so that i can reset without the need to contact admin.
+* As a user i can easily navigate through the website without too much thought so that i can find what I'm looking for quickly.
+* As a user i can easily identify what the website is about so that i know what it has to offer.
+
+- Admin
+* As a Admin i can Sign in backend so that i can view, edit and delete customer bookings.
+* As a Admin i can add new bookings backend so that telephone and walk in customers can get booked in.
 
 ### Goals
 
