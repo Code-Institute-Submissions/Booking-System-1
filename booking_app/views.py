@@ -85,43 +85,47 @@ def my_bookings(request):
 def edit_booking(request, booking_id):
     """ A view to edit booking and display the populated form """
     booking = get_object_or_404(Booking, id=booking_id)
-    if request.method == "POST":
-        form = BookingForm(request.POST, instance=booking)
-        bookings = request.user.hiuser.all()
-        date_str = request.POST.get("date")
-        form_date = parse_date(date_str)
-        book_date = Booking.objects.filter(date=form_date)
-        time_str = request.POST.get("time")
-        book_time = Booking.objects.filter(time=time_str)
-        today = str(date.today())
-        if date_str >= today:
-            if time_str != "Select a time":
-                if book_time and book_date:
-                    if booking != form:
-                        form = BookingForm()
-                        context = {"bookings": bookings}
-                        messages.error(
-                            request,
-                            "This time slot is taken," +
-                            " please choose another time.",
-                        )
-                        return render(
-                            request, "booking_app/my-bookings.html", context
-                        )
+    if booking.user != request.user:
+        messages.error(request, "This Booking does not exist or does not belong to you.")
+        return redirect("my_bookings")
+    else:
+        if request.method == "POST":
+            form = BookingForm(request.POST, instance=booking)
+            bookings = request.user.hiuser.all()
+            date_str = request.POST.get("date")
+            form_date = parse_date(date_str)
+            book_date = Booking.objects.filter(date=form_date)
+            time_str = request.POST.get("time")
+            book_time = Booking.objects.filter(time=time_str)
+            today = str(date.today())
+            if date_str >= today:
+                if time_str != "Select a time":
+                    if book_time and book_date:
+                        if booking != form:
+                            form = BookingForm()
+                            context = {"bookings": bookings}
+                            messages.error(
+                                request,
+                                "This time slot is taken," +
+                                " please choose another time.",
+                            )
+                            return render(
+                                request, "booking_app/my-bookings.html", context
+                            )
+                else:
+                    form = BookingForm()
+                    context = {"bookings": bookings}
+                    messages.error(request, "Please Select a time! Try Again.")
+                    return render(request, "booking_app/my-bookings.html", context)
             else:
                 form = BookingForm()
-                context = {"bookings": bookings}
-                messages.error(request, "Please Select a time! Try Again.")
-                return render(request, "booking_app/my-bookings.html", context)
-        else:
-            form = BookingForm()
-            context = {"form": form}
-            messages.error(request, "Please Select a present or future date.")
-            return render(request, "booking_app/booking.html", context)
-        if form.is_valid():
-            form.save()
-        messages.success(request, "Edit successful.")
-        return redirect("my_bookings")
+                context = {"form": form}
+                messages.error(request, "Please Select a present or future date.")
+                return render(request, "booking_app/booking.html", context)
+            if form.is_valid():
+                form.save()
+            messages.success(request, "Edit successful.")
+            return redirect("my_bookings")
     form = BookingForm(instance=booking)
     context = {"form": form}
     return render(request, "booking_app/edit_booking.html", context)
