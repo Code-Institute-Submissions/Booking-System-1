@@ -42,11 +42,13 @@ def booking_view(request):
                         context = {"form": form}
                         messages.error(
                             request,
-                            "This time slot is taken," +
+                            "This time slot is taken,"
                             " please choose another time.",
                         )
                         return render(
-                            request, "booking_app/booking.html", context
+                            request,
+                            "booking_app/booking.html",
+                            context
                         )
                 else:
                     form = BookingForm()
@@ -57,7 +59,8 @@ def booking_view(request):
                 form = BookingForm()
                 context = {"form": form}
                 messages.error(
-                    request, "Please Select a present or future date."
+                    request,
+                    "Please Select a present or future date."
                 )
                 return render(request, "booking_app/booking.html", context)
             if form.is_valid():
@@ -86,7 +89,9 @@ def edit_booking(request, booking_id):
     """ A view to edit booking and display the populated form """
     booking = get_object_or_404(Booking, id=booking_id)
     if booking.user != request.user:
-        messages.error(request, "This Booking does not exist or does not belong to you.")
+        messages.error(
+            request, "This Booking does not exist or does not belong to you."
+        )
         return redirect("my_bookings")
     else:
         if request.method == "POST":
@@ -106,21 +111,30 @@ def edit_booking(request, booking_id):
                             context = {"bookings": bookings}
                             messages.error(
                                 request,
-                                "This time slot is taken," +
+                                "This time slot is taken,"
                                 " please choose another time.",
                             )
                             return render(
-                                request, "booking_app/my-bookings.html", context
+                                request,
+                                "booking_app/my-bookings.html",
+                                context
                             )
                 else:
                     form = BookingForm()
                     context = {"bookings": bookings}
                     messages.error(request, "Please Select a time! Try Again.")
-                    return render(request, "booking_app/my-bookings.html", context)
+                    return render(
+                        request,
+                        "booking_app/my-bookings.html",
+                        context
+                    )
             else:
                 form = BookingForm()
                 context = {"form": form}
-                messages.error(request, "Please Select a present or future date.")
+                messages.error(
+                    request,
+                    "Please Select a present or future date."
+                )
                 return render(request, "booking_app/booking.html", context)
             if form.is_valid():
                 form.save()
@@ -149,7 +163,8 @@ def register_request(request):
             messages.success(request, "Registration successful.")
             return redirect("my_bookings")
         messages.error(
-            request, "Unsuccessful registration. Invalid information."
+            request,
+            "Unsuccessful registration. Invalid information."
         )
     form = NewUserForm()
     return render(
