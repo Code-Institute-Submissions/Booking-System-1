@@ -136,12 +136,12 @@ HTML Validator was used to ensure best practices. I viewed the page source and c
 
 ### CSS Validator
 CSS Validator was used, by copying and pasting css into W3C CSS Validator / Jigsaw.
-![CSS Validator](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/testing-results/css-validator.png)
+![CSS Validator](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/testing_results/css-validator.png)
 [CSS Validator](https://jigsaw.w3.org/css-validator/validator)
 
 ### PEP8 validator
 [PEP8 Online](http://pep8online.com/) was used to check if python was pep8 compliant.
-![PEP8](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/testing-results/pep8.png)
+![PEP8](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/testing_results/pep8.png)
 
 ## Deployment
 
