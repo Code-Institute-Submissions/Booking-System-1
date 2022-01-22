@@ -1,7 +1,7 @@
 # Booking App
 ## By Clayton File
 
-![BookingAppHomepage](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/homepage.png)
+![BookingAppHomepage](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/homepage.png)
 
 ## Table Of Contents
 1. [Intro](#intro)
@@ -31,28 +31,28 @@ We maintained the same colour pallete throughout to maintain consistency and ens
 
 ### Wireframes
 I had a live version of a wireframe to use as the website was structured to fit in with the style and theme of Geco Tech Network website.
-![Geco Tech Website](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/geco-tech.png)
+![Geco Tech Website](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/geco-tech.png)
 
 ### Homepage
-![Homepage](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/wireframes/home-wireframe.png)
+![Homepage](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/wireframes/home-wireframe.png)
 ### Booking Form
-![Booking Form](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/wireframes/book-a-repair-wireframe.png)
+![Booking Form](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/wireframes/book-a-repair-wireframe.png)
 ### My Bookings
-![My Bookings](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/wireframes/my-bookings-wireframe.png)
+![My Bookings](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/wireframes/my-bookings-wireframe.png)
 ### Login
-![Login](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/wireframes/login-wireframe.png)
+![Login](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/wireframes/login-wireframe.png)
 ### Register
-![Register](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/wireframes/register-wireframe.png)
+![Register](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/wireframes/register-wireframe.png)
 ### Reset Password
-![Reset Password](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/wireframes/reset-password-wireframe.png)
+![Reset Password](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/wireframes/reset-password-wireframe.png)
 
 ### User Stories
 Using Github "Issues" and "Projects" User stories are created to get a basic understanding of different users needs.
 - [Issues](https://github.com/TechCentreUK/Booking-System/issues)
-![Issues](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/issues.png)
+![Issues](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/issues.png)
 
 - [Projects](https://github.com/TechCentreUK/Booking-System/projects/1)
-![Projects](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/projects.png)
+![Projects](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/projects.png)
 
 - Customers / Site Users
 * As a user, I am able to access the site on my mobile, tablet, and desktop which is adapted to provide the best experience.
@@ -99,10 +99,10 @@ Using Github "Issues" and "Projects" User stories are created to get a basic und
 
 ## Testing
 
-![Flow Chart](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/flowchart.png)
+![Flow Chart](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/flowchart.png)
 - [Flow Chart](https://lucid.app/)
 
-![Lighthouse](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/readme_images/testing_results/lighthouse.png)
+![Lighthouse](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/testing_results/lighthouse.png)
 - [Google Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse)
 Lighthouse was used to ensure performance, best practices and colours didnt prevent readability. There was a few factors which doesnt allow the score to add up to 100% including no HTTPS connection with heroku.
 
@@ -131,17 +131,17 @@ def my_bookings(request):
 
 ### HTML validator
 HTML Validator was used to ensure best practices. I viewed the page source and copy and pasted into the HTML validator to confirm this.
-![HTML Validator](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/testing-results/booking-html-validator.png)
+![HTML Validator](https://github.com/TechCentreUK/Booking-System/blob/main/testing-results/booking-html-validator.png)
 [HTML Validator](https://validator.w3.org/#validate_by_input)
 
 ### CSS Validator
 CSS Validator was used, by copying and pasting css into W3C CSS Validator / Jigsaw.
-![CSS Validator](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/testing-results/css-validator.png)
+![CSS Validator](https://github.com/TechCentreUK/Booking-System/blob/main/testing-results/css-validator.png)
 [CSS Validator](https://jigsaw.w3.org/css-validator/validator)
 
 ### PEP8 validator
 [PEP8 Online](http://pep8online.com/) was used to check if python was pep8 compliant.
-![PEP8](https://github.com/TechCentreUK/Booking-System/blob/main/booking_app/testing-results/pep8.png)
+![PEP8](https://github.com/TechCentreUK/Booking-System/blob/main/testing-results/pep8.png)
 
 ## Deployment
 
