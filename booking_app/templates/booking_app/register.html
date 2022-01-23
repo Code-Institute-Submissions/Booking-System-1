@@ -1,8 +1,8 @@
-{% extends "booking_app/base.html" %}
+{% extends "../base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
 <!-- Registration Form -->
-{% include "booking_app/tabs.html" with active_tab='register' %}
+{% include "../tabs.html" with active_tab='register' %}
 <div class="container py-5">
    <h1>Register</h1>
    <p>Please choose a Username without spaces.</p>

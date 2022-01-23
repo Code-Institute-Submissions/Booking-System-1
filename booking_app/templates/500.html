@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<!-- 404 error handler -->
+<!-- 500 error handler -->
 <div class="container-fluid error-container ">
     <div class="row no-gutters text-center">
         <div class="col-sm-12 page-top-banner">
-            <h2 class="pt-5"> 404 page not found </h2>
-            <p class="text-center">It seems you have taken a wrong turn.</p>
+            <h2 class="pt-5"> 500 internal server error </h2>
+            <p class="text-center">It seems our servers have encountered an error.</p>
             <p class="text-center">Let's get you out of here.</p>
         </div>
         <div class="col-sm-12 my-5">
-            <a href="{% url 'home' %}" class="btn">
+            <a href="{% url 'booking_app' %}" class="btn">
                 <i class=""></i>Go to home page
             </a>
         </div>
