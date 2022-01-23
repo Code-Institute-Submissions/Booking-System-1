@@ -105,7 +105,7 @@ I had a live version of a wireframe to use as the website was structured to fit 
 ### Database Design
 ![Database Diagran](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/database.png)
 
-- Security
+### Security
 Using config variables in heroku, all SECRET access keys are stored safely to prevent unwanted connections to the database.
 
 ## Surface
@@ -234,6 +234,7 @@ CSS Validator was used, by copying and pasting css into W3C CSS Validator / Jigs
 
 [Am I Responsive](http://ami.responsivedesign.is/)
 ![Am I Responsive](https://github.com/TechCentreUK/Booking-System/blob/main/readme_images/testing_results/responsive.png)
+Responsiveness was tested manually using google chrome development tools, my iPhone 12 pro max AND using Am i Responsive as per the above screeshot.
 
 ### Assumptions and Dependencies
 Testing is dependent on the website being deployed live on Heroku.
