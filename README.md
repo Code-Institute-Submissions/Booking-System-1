@@ -185,6 +185,7 @@ whitenoise
 
 - Given more time i would have greyed out unavailable date and times and came up with a cleaner solution.
 - You cannot edit currently with the same time slot. This is to be fixed in the future.
+- Lost admin panel styles when uploading to heroku (once debug was false).
 
 ## Testing
 
